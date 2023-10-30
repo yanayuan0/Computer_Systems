@@ -1,0 +1,66 @@
+maze puzzle 1: getting off of the roof  
+==============
+
+Answer: You cannot find peace by avoiding life.
+
+At line phase_1+8 a string $0x403438 is moved to register esi and
+later function "strings_not_equal" is called. We know from main that
+the input_strings which is our solution is stored in register rax.
+The test command at line phase_1+18 tests whether our solution is
+equal to the correct solution, and jump to function tripped_up if
+not equal. So our solution should be the string moved to %esi, which
+is tested to be "You cannot find peace by avoiding life." by x/s
+$0x403438.
+
+--------------------------------------------------------------------
+maze puzzle 2: getting past the residential floors
+==============
+
+Answer: 4 5 7 10 14 19
+
+Phase_2 first reads six numbers so the solution should be 6 numbers
+otherwise it would be tripped up. At phase_2+33 our first number is
+compared with $2 and jumps to tripped_up if it is smaller than 2. So
+the first number can be any number larger than 2. 
+Then it goes into a while loop in which the condition is $rbx=6
+(shown by line phase_2+63) and the loop goes on iff our value input 
+is equal to ($rbx+our first input value). $rbx increases by
+1 in every iteration, so our input value should be increased by 1, 
+2, 3, 4, 5 which are the values of %rbx in each iteration. %rbx stops
+at 5 as we will get out of the while loop when %rbx=6. So the final
+answer is 4 5 7 10 14 19 and the first number is an integer larger 
+than 2 that I randomly picked.
+
+--------------------------------------------------------------------
+maze puzzle 3: getting past Admissions
+==============
+
+Answer: 0 320
+
+Phase_3 reads numbers as input and do a series of comparisons to not 
+get tripped up. However, there is a way to skip some of the 
+comparisons to solve the maze by comparing two of my inputs.
+To get to comparisons, the length of argument should be larger than
+0 because at <phase_3+44>, 1 and the return value from <scanf> are
+compared.
+First comparison: the function jumps to <phase_3+95> if "test %rax
+%rax" is equal to 0. %rax stores the first user input, and the test
+does a binary AND so the value at %rax should be 0 as 0&0=0.
+Second comparison: at <phase_3+95>, it compares %rdx and 0x10(%rsp).
+The second user input is stored at 0x10(%rsp), and %rdx = 0x140
+which is 320 in decimal. It jumps to tripped_up when not equal, so 
+the second user input should be 320.
+
+--------------------------------------------------------------------
+maze puzzle 4: getting past the Registrar's Office
+==============
+
+length = 2
+1 <0xe=14
+after function4, rax=0x13
+0x10(%rsp)=0x13
+
+
+--------------------------------------------------------------------
+Anything else?
+=============
