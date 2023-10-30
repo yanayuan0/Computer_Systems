@@ -1,0 +1,116 @@
+This file has three sections:
+
+1. Test cases that are given to you, with the answers.  For these, you just
+need to run them through your circuit and record your results.
+
+2. Test cases that are given to you, without the answers.  For these, you
+should work out the expected result (e.g., on paper) and then compare that
+result with your circuit.
+
+3. Test cases that you develop on your own.  You should add two or more test
+cases in this section.  You should describe: What you're testing, what you
+expect the answer to be (and how you determined that expectation), and what
+your circuit produced.
+
+
+===
+1. Test cases that are given, with answers.
+===
+
+A)
+Cin = 0
+X = 0011
+Y = 01
+
+Expected result:
+Sum:  0100
+Cout: 0
+
+What your circuit produced:
+[your answer here]
+
+Sum:  0100
+Cout: 0
+
+B)
+Cin = 1
+X = 1000
+Y = 10
+
+Expected result:
+Sum:  0111
+Cout: 1
+
+What your circuit produced:
+[your answer here]
+
+Sum:  0111
+Cout: 1
+
+===
+2. Test cases that are given, without answers.
+===
+
+C)
+Cin = 0
+X = 1111
+Y = 01
+
+Expected result:
+Sum: 0000
+Cout: 1
+
+What your circuit produced:
+[your answer here]
+
+Sum: 0000
+Cout: 1
+
+D)
+Cin = 1
+X = 0111
+Y = 11
+
+Expected result:
+Sum:  0111
+Cout: 1
+
+What your circuit produced:
+[your answer here]
+
+Sum:  0111
+Cout: 1
+
+===
+3. Test cases that you generated.
+===
+
+E)
+Cin = 0
+X = 0110
+Y = 10
+
+Expected result:
+Sum:  0100
+Cout: 1
+
+What your circuit produced:
+
+Sum:  0100
+Cout: 1
+
+F)
+Cin = 1
+X = 1110
+Y = 00
+
+Expected result:
+Sum:  1111
+Cout: 0
+
+What your circuit produced:
+
+Sum:  1111
+Cout: 0
+
+
